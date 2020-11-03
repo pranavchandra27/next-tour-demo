@@ -3,8 +3,8 @@ import React from "react";
 const Profile = () => {
   return (
     <div className='container'>
-      <h1 className='profile-title'>User Name</h1>
-      <h3 className='profile-position'>User occupation</h3>
+      <h1 className='profile-title'>John Doe</h1>
+      <h3 className='profile-position'>Software Engineer</h3>
     </div>
   );
 };
