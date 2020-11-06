@@ -56,3 +56,31 @@ nav .links p:hover {
   justify-content: center;
   align-items: center;
 }
+
+table.pvtTable {
+  font-family: inherit !important;
+  background-color: #ffffff !important;
+}
+
+table.pvtTable thead tr th {
+  color: #555 !important;
+  border: none !important;
+  margin-bottom: 20px !important;
+}
+
+table.pvtTable thead tr th,
+table.pvtTable tbody tr th {
+  background-color: #ffffff !important;
+  font-size: 14px !important;
+  border: none !important;
+  font-weight: normal;
+}
+
+table.pvtTable thead tr th {
+  font-weight: bold;
+  background-color: lightgrey !important;
+}
+
+table.pvtTable tbody tr:nth-child(odd) {
+  background: lightgray !important;
+}

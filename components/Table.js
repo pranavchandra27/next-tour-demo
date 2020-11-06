@@ -11,22 +11,10 @@ const Table = () => {
   const [hideConstructor, setHideConstructor] = useState(true);
   const [pivotTable, setPivotTable] = useState({
     data: KPIsData,
-    rows: [
-      "Retailer",
-      "Stores Available",
-      "Stores Available VS",
-      "Wkly Avg Sales/Store",
-      "Wkly Avg Sales/Store VS",
-      "Wkly Avg Sales Total",
-      "Wkly Avg Sales Total VS",
-      "Total Sales",
-      "Total Sales VS",
-      "Total Sales Difference",
-      "Source",
-    ],
+    rows: KPIsData[0],
     // cols: [""],
-    aggregatorsName: "Sum over Sum",
-    vals: ["Total Sales", "Total Sales VS"],
+    aggregatorsName: "Sum",
+    vals: ["Total Sales"],
 
     plotlyOptions: { width: 900, height: 500 },
   });
