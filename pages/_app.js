@@ -3,53 +3,22 @@ import Navbar from "../components/Navbar";
 import "../styles/globals.css";
 import { useRouter } from "next/router";
 import Joyride from "react-joyride";
+import { ToastContainer } from "react-toastify";
+import { steps } from "../components/config";
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
-  const [steps, setSteps] = useState([
-    {
-      title: "Main Title",
-      target: ".main-content",
-      content: "This is the main content header",
-      disableBeacon: true,
-    },
-    {
-      isFixed: true,
-      target: ".main-heading",
-      content: "This is the main heading",
-    },
-    {
-      target: ".nav-trending",
-      content: "This is Link to on a Trending page",
-    },
-    {
-      target: ".trending-header",
-      content: "Trending Info",
-    },
-    {
-      target: ".trending-heading",
-      content: "Trending Heading",
-    },
-    {
-      target: ".nav-profile",
-      content: "This is link to profile",
-    },
-    {
-      target: ".profile-title",
-      content: "This is name of user ",
-    },
-    {
-      target: ".profile-position",
-      content: "This is user's occupation",
-    },
-  ]);
 
   const handleCallback = data => {
     console.log(data);
-    const { step } = data;
+    const { step, action } = data;
 
     if (step.target === ".nav-trending") {
       router.push({ pathname: "/trending" });
+    }
+
+    if (action === "prev" && step.target === ".nav-trending") {
+      router.back();
     }
 
     if (step.target === ".nav-profile") {
@@ -60,7 +29,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <Joyride
-        run={true}
+        run={false}
         callback={handleCallback}
         spotlightClicks={true}
         scrollToFirstStep={true}
@@ -70,10 +39,12 @@ function MyApp({ Component, pageProps }) {
         continuous={true}
         styles={{
           options: {
+            width: 300,
             zIndex: 10000,
           },
         }}
       />
+      <ToastContainer />
       <Navbar />
       <Component {...pageProps} />
     </>

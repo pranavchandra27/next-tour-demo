@@ -14,6 +14,9 @@ const Navbar = () => {
         <Link href='/profile'>
           <p className='nav-profile'>Profile</p>
         </Link>
+        <Link href='/table'>
+          <p className='nav-table'>Table</p>
+        </Link>
       </div>
     </nav>
   );
