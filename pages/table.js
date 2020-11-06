@@ -25,8 +25,8 @@ const Table = () => {
       "Source",
     ],
     // cols: [""],
-    aggregatorsName: "Sum",
-    vals: ["'Total Sales', 'Total Sales VS'"],
+    aggregatorsName: "Sum over Sum",
+    vals: ["Total Sales", "Total Sales VS"],
 
     plotlyOptions: { width: 900, height: 500 },
   });
