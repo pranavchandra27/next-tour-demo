@@ -5,6 +5,7 @@ import { useRouter } from "next/router";
 import Joyride from "react-joyride";
 import { ToastContainer } from "react-toastify";
 import { steps } from "../components/config";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();

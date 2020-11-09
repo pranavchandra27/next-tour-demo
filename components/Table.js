@@ -12,11 +12,8 @@ const Table = () => {
   const [pivotTable, setPivotTable] = useState({
     data: KPIsData,
     rows: KPIsData[0],
-    // cols: [""],
-    aggregatorsName: "Sum",
+    aggregatorName: "Sum",
     vals: ["Total Sales"],
-
-    plotlyOptions: { width: 900, height: 500 },
   });
 
   const TableComponent = hideConstructor ? PivotTable : PivotTableUI;
@@ -27,7 +24,11 @@ const Table = () => {
         Constructor
       </button>
 
-      <TableComponent onChange={s => setPivotTable(s)} {...pivotTable} />
+      <TableComponent
+        data={KPIsData}
+        onChange={s => setPivotTable(s)}
+        {...pivotTable}
+      />
     </div>
   );
 };
